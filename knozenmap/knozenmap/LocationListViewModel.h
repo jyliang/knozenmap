@@ -11,6 +11,7 @@
 @protocol LocationListViewModelDelegate <NSObject>
 
 - (void)reloadLocationData;
+- (void)stopLoadingState;
 
 @end
 

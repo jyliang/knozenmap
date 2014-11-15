@@ -60,7 +60,7 @@ typedef enum {
 
 - (void)updateSystemPreferenceSegment {
     if (self.container.subviews.count == 0) {
-        NSLog(@"great");
+
     } else {
         NSArray *subviews = self.container.subviews;
         for (UIView *view in subviews) {
@@ -88,10 +88,6 @@ typedef enum {
     [self updateSystemPreferenceSegment];
     [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInteger:self.segmentControl.selectedSegmentIndex] forKey:kUDSegmentKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
-}
-
-- (void)loadCurrentSegmentControl {
-
 }
 
 - (void)didReceiveMemoryWarning {

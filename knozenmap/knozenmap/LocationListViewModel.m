@@ -14,9 +14,6 @@
 
 @property (nonatomic, strong) NSOperationQueue *queue;
 
-
-@property(nonatomic, strong) NSMutableDictionary *currentDictionary;   // current section being parsed
-@property(nonatomic, strong) NSMutableDictionary *xmlStructure;          // completed parsed xml response
 @property(nonatomic, strong) NSString *elementName;
 @property(nonatomic, strong) NSMutableString *outstring;
 
@@ -38,33 +35,19 @@
 - (void)getLocationData {
     static NSString *feedURLString = @"https://s3-us-west-2.amazonaws.com/jyliang/locations.xml";
 //    static NSString *feedURLString = @"http://dev1.knowadozen.com/site_media/locations.xml";
+
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:feedURLString]];
-//    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-//        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-//        if (connectionError != nil) {
-//            [self handleError:connectionError];
-//        } else {
-////            response.
-//        }
-//    }];
-//
-//    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-
-
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     operation.responseSerializer = [AFXMLParserResponseSerializer serializer];
-
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSXMLParser *XMLParser = (NSXMLParser *)responseObject;
         [XMLParser setShouldProcessNamespaces:YES];
-
         XMLParser.delegate = self;
         [XMLParser parse];
-
-
-
+        [self.delegate stopLoadingState];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         [self handleError:error];
+        [self.delegate stopLoadingState];
     }];
 
     [self.queue addOperation:operation];
@@ -77,18 +60,17 @@
                                                        delegate:nil
                                               cancelButtonTitle:@"Ok"
                                               otherButtonTitles:nil];
-    [alertView show];}
+    [alertView show];
+}
 
 #pragma mark - NSXMLParserDelegate
 - (void)parserDidStartDocument:(NSXMLParser *)parser {
     self.locationViewModelList = [NSMutableArray array];
-    self.xmlStructure = [NSMutableDictionary dictionary];
 }
 
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
     self.elementName = qName;
     if ([qName isEqualToString:@"last_seen_at"]) {
-//        self.currentDictionary = [NSMutableDictionary dictionary];
         self.currentItemViewModel = [[LocationItemViewModel alloc] init];
 }
     self.outstring = [NSMutableString string];
@@ -127,7 +109,6 @@
 
 - (void) parserDidEndDocument:(NSXMLParser *)parser
 {
-//    [self.tableView reloadData];
     [self.delegate reloadLocationData];
 }
 

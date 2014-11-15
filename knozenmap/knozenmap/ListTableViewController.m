@@ -22,6 +22,13 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    self.refreshControl.backgroundColor = [UIColor lightGrayColor];
+    self.refreshControl.tintColor = [UIColor whiteColor];
+    [self.refreshControl addTarget:self
+                            action:@selector(getLatestLocations)
+                  forControlEvents:UIControlEventValueChanged];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,6 +39,10 @@
 - (void)setLocationListVM:(LocationListViewModel *)locationListVM {
     _locationListVM = locationListVM;
     _locationListVM.delegate = self;
+}
+
+- (void)getLatestLocations {
+    [self.locationListVM getLocationData];
 }
 
 #pragma mark - Table view data source
@@ -52,9 +63,15 @@
     [self.navigateDelegate navigateToLocation:itemVM];
 }
 
+
+
 #pragma mark - LocationListViewModelDelegate
 
 - (void)reloadLocationData {
+    [self.refreshControl endRefreshing];
+}
+
+- (void)stopLoadingState {
     [self.tableView reloadData];
 }
 
