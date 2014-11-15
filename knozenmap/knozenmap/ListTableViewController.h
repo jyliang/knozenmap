@@ -7,7 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LocationListViewModel.h"
+#import "LocationItemViewModel.h"
 
-@interface ListTableViewController : UITableViewController
+
+@protocol LocationListViewControllerDelegate <NSObject>
+
+- (void)navigateToLocation:(LocationItemViewModel *)itemVM;
+
+@end
+
+@interface ListTableViewController : UITableViewController <LocationListViewModelDelegate>
+
+@property (nonatomic, weak) id<LocationListViewControllerDelegate> navigateDelegate;
+@property (nonatomic, weak) LocationListViewModel *locationListVM;
 
 @end
