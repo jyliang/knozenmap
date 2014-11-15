@@ -30,6 +30,9 @@
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="mapView" destination="Xef-be-gqa" id="DNY-XX-CXW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lPI-SO-OAT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

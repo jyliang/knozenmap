@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LocationItemViewModel.h"
 
 @interface MapViewController : UIViewController
+
+- (void)navigateTo:(LocationItemViewModel *)itemVM;
 
 @end

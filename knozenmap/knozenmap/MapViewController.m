@@ -9,6 +9,7 @@
 #import "MapViewController.h"
 
 @interface MapViewController ()
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
 @end
 
@@ -24,14 +25,32 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)navigateTo:(LocationItemViewModel *)itemVM {
+    [self.mapView removeAnnotations:self.mapView.annotations];
+    [self addAnotation:itemVM];
 }
-*/
+
+- (void)addAnotation:(LocationItemViewModel *)itemVM {
+    MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+    CLLocationCoordinate2D pinCoordinate;
+    pinCoordinate.latitude = [itemVM.lat doubleValue];
+    pinCoordinate.longitude = [itemVM.lon doubleValue];
+    annotation.coordinate = pinCoordinate;
+    annotation.title = itemVM.address;
+    [self.mapView addAnnotation:annotation];
+    [self centerZoomToLocation:pinCoordinate];
+}
+
+- (void)centerZoomToLocation:(CLLocationCoordinate2D) pinCoordinate {
+    float spanX = 0.00725;
+    float spanY = 0.00725;
+    MKCoordinateRegion region;
+    region.center.latitude = pinCoordinate.latitude;
+    region.center.longitude = pinCoordinate.longitude;
+    region.span.latitudeDelta = spanX;
+    region.span.longitudeDelta = spanY;
+    [self.mapView setCenterCoordinate:pinCoordinate animated:YES];
+    [self.mapView setRegion:region animated:YES];
+}
 
 @end

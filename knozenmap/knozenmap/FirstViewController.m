@@ -19,7 +19,7 @@ typedef enum {
 
 #define kUDSegmentKey @"segmentKey"
 
-@interface FirstViewController ()
+@interface FirstViewController () <LocationListViewControllerDelegate>
 @property (nonatomic) Segment currentSegment;
 @property (nonatomic, strong) ListTableViewController *listVC;
 @property (nonatomic, strong) MapViewController *mapVC;
@@ -31,18 +31,18 @@ typedef enum {
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.locationListVM = [[LocationListViewModel alloc] init];
-    [self.locationListVM getLocationData];
-
     [self loadSystemPreferenceSegment];
     [self loadListVC];
     [self loadMapVC];
     [self updateSystemPreferenceSegment];
-
+    [self.locationListVM getLocationData];
 }
 
 - (void)loadListVC {
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"ListView" bundle:[NSBundle mainBundle]];
     self.listVC = [sb instantiateInitialViewController];
+    self.listVC.navigateDelegate = self;
+    self.listVC.locationListVM = self.locationListVM;
     [self.listVC view];
 }
 
@@ -97,6 +97,16 @@ typedef enum {
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - LocationListViewControllerDelegate
+- (void)navigateToLocation:(LocationItemViewModel *)itemVM {
+    [self.segmentControl setSelectedSegmentIndex:kSegmentMap];
+    self.currentSegment = kSegmentMap;
+    [self updateSystemPreferenceSegment];
+    [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInteger:kSegmentMap] forKey:kUDSegmentKey];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    [self.mapVC navigateTo:itemVM];
 }
 
 @end

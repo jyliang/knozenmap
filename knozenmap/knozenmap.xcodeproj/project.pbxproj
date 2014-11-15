@@ -23,6 +23,8 @@
 		4F7FDD6C1A17DEC200345121 /* LocationListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F7FDD6B1A17DEC200345121 /* LocationListViewModel.m */; };
 		4F7FDD6E1A17DFF600345121 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F7FDD6D1A17DFF600345121 /* UIKit.framework */; };
 		4F7FDD701A17DFFD00345121 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F7FDD6F1A17DFFD00345121 /* Foundation.framework */; };
+		4F7FDD741A17E9B700345121 /* LocationItemViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F7FDD731A17E9B700345121 /* LocationItemViewModel.m */; };
+		7254AE5282E089DFE2010C16 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E68C21986D4ABE92D404DB31 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,11 @@
 		4F7FDD6D1A17DFF600345121 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4F7FDD6F1A17DFFD00345121 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4F7FDD711A17E07800345121 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		4F7FDD721A17E9B700345121 /* LocationItemViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationItemViewModel.h; sourceTree = "<group>"; };
+		4F7FDD731A17E9B700345121 /* LocationItemViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationItemViewModel.m; sourceTree = "<group>"; };
+		BA927B0D8F1D7BAC74CD1877 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		E68C21986D4ABE92D404DB31 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF624D9ECF8AFC346E693E0B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +80,7 @@
 				4F7FDD701A17DFFD00345121 /* Foundation.framework in Frameworks */,
 				4F7FDD6E1A17DFF600345121 /* UIKit.framework in Frameworks */,
 				4F7FDD691A17DD8F00345121 /* MapKit.framework in Frameworks */,
+				7254AE5282E089DFE2010C16 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +103,8 @@
 				4F7FDD2D1A17D4CD00345121 /* knozenmap */,
 				4F7FDD4A1A17D4CD00345121 /* knozenmapTests */,
 				4F7FDD2C1A17D4CD00345121 /* Products */,
+				95A3CC152867B29330060AF8 /* Pods */,
+				F3D934BDC9B47004FCD1AE21 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,6 +138,8 @@
 				4F7FDD661A17DC0500345121 /* MapViewController.m */,
 				4F7FDD6A1A17DEC200345121 /* LocationListViewModel.h */,
 				4F7FDD6B1A17DEC200345121 /* LocationListViewModel.m */,
+				4F7FDD721A17E9B700345121 /* LocationItemViewModel.h */,
+				4F7FDD731A17E9B700345121 /* LocationItemViewModel.m */,
 			);
 			path = knozenmap;
 			sourceTree = "<group>";
@@ -159,6 +171,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		95A3CC152867B29330060AF8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BA927B0D8F1D7BAC74CD1877 /* Pods.debug.xcconfig */,
+				EF624D9ECF8AFC346E693E0B /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F3D934BDC9B47004FCD1AE21 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E68C21986D4ABE92D404DB31 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -166,9 +195,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4F7FDD511A17D4CD00345121 /* Build configuration list for PBXNativeTarget "knozenmap" */;
 			buildPhases = (
+				8768A12897003DC15CBBB584 /* Check Pods Manifest.lock */,
 				4F7FDD271A17D4CD00345121 /* Sources */,
 				4F7FDD281A17D4CD00345121 /* Frameworks */,
 				4F7FDD291A17D4CD00345121 /* Resources */,
+				0D1952E43825A75886873EF1 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -256,6 +287,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0D1952E43825A75886873EF1 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8768A12897003DC15CBBB584 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4F7FDD271A17D4CD00345121 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -267,6 +331,7 @@
 				4F7FDD6C1A17DEC200345121 /* LocationListViewModel.m in Sources */,
 				4F7FDD671A17DC0500345121 /* MapViewController.m in Sources */,
 				4F7FDD311A17D4CD00345121 /* main.m in Sources */,
+				4F7FDD741A17E9B700345121 /* LocationItemViewModel.m in Sources */,
 				4F7FDD631A17D77E00345121 /* ListTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -387,6 +452,7 @@
 		};
 		4F7FDD521A17D4CD00345121 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA927B0D8F1D7BAC74CD1877 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PREFIX_HEADER = knozenmap/PrefixHeader.pch;
@@ -398,6 +464,7 @@
 		};
 		4F7FDD531A17D4CD00345121 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF624D9ECF8AFC346E693E0B /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PREFIX_HEADER = knozenmap/PrefixHeader.pch;
@@ -460,6 +527,7 @@
 				4F7FDD531A17D4CD00345121 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4F7FDD541A17D4CD00345121 /* Build configuration list for PBXNativeTarget "knozenmapTests" */ = {
 			isa = XCConfigurationList;
@@ -468,6 +536,7 @@
 				4F7FDD561A17D4CD00345121 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
