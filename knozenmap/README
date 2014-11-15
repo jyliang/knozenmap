@@ -1,0 +1,6 @@
+See requirements in the requirements folder.
+
+Use pod install to initialize libraires:
+3rd party library: AFNetworking
+
+Switch the constant feedURLString in LocationListViewModel for the desired URL. 

@@ -127,19 +127,12 @@
 				4F7FDD381A17D4CD00345121 /* SecondViewController.h */,
 				4F7FDD391A17D4CD00345121 /* SecondViewController.m */,
 				4F7FDD3B1A17D4CD00345121 /* Main.storyboard */,
+				4F7FDD761A17FCB900345121 /* List */,
+				4F7FDD751A17FCB400345121 /* Map */,
+				4F7FDD771A17FCCC00345121 /* ViewModel */,
 				4F7FDD3E1A17D4CD00345121 /* Images.xcassets */,
 				4F7FDD401A17D4CD00345121 /* LaunchScreen.xib */,
 				4F7FDD2E1A17D4CD00345121 /* Supporting Files */,
-				4F7FDD571A17D6A500345121 /* ListView.storyboard */,
-				4F7FDD591A17D6AD00345121 /* MapView.storyboard */,
-				4F7FDD611A17D77E00345121 /* ListTableViewController.h */,
-				4F7FDD621A17D77E00345121 /* ListTableViewController.m */,
-				4F7FDD651A17DC0500345121 /* MapViewController.h */,
-				4F7FDD661A17DC0500345121 /* MapViewController.m */,
-				4F7FDD6A1A17DEC200345121 /* LocationListViewModel.h */,
-				4F7FDD6B1A17DEC200345121 /* LocationListViewModel.m */,
-				4F7FDD721A17E9B700345121 /* LocationItemViewModel.h */,
-				4F7FDD731A17E9B700345121 /* LocationItemViewModel.m */,
 			);
 			path = knozenmap;
 			sourceTree = "<group>";
@@ -169,6 +162,37 @@
 				4F7FDD4C1A17D4CD00345121 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4F7FDD751A17FCB400345121 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				4F7FDD591A17D6AD00345121 /* MapView.storyboard */,
+				4F7FDD651A17DC0500345121 /* MapViewController.h */,
+				4F7FDD661A17DC0500345121 /* MapViewController.m */,
+			);
+			name = Map;
+			sourceTree = "<group>";
+		};
+		4F7FDD761A17FCB900345121 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				4F7FDD571A17D6A500345121 /* ListView.storyboard */,
+				4F7FDD611A17D77E00345121 /* ListTableViewController.h */,
+				4F7FDD621A17D77E00345121 /* ListTableViewController.m */,
+			);
+			name = List;
+			sourceTree = "<group>";
+		};
+		4F7FDD771A17FCCC00345121 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4F7FDD6A1A17DEC200345121 /* LocationListViewModel.h */,
+				4F7FDD6B1A17DEC200345121 /* LocationListViewModel.m */,
+				4F7FDD721A17E9B700345121 /* LocationItemViewModel.h */,
+				4F7FDD731A17E9B700345121 /* LocationItemViewModel.m */,
+			);
+			name = ViewModel;
 			sourceTree = "<group>";
 		};
 		95A3CC152867B29330060AF8 /* Pods */ = {
