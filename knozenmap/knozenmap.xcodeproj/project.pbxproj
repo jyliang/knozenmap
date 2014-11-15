@@ -20,6 +20,9 @@
 		4F7FDD631A17D77E00345121 /* ListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F7FDD621A17D77E00345121 /* ListTableViewController.m */; };
 		4F7FDD671A17DC0500345121 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F7FDD661A17DC0500345121 /* MapViewController.m */; };
 		4F7FDD691A17DD8F00345121 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F7FDD681A17DD8E00345121 /* MapKit.framework */; };
+		4F7FDD6C1A17DEC200345121 /* LocationListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F7FDD6B1A17DEC200345121 /* LocationListViewModel.m */; };
+		4F7FDD6E1A17DFF600345121 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F7FDD6D1A17DFF600345121 /* UIKit.framework */; };
+		4F7FDD701A17DFFD00345121 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F7FDD6F1A17DFFD00345121 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +58,11 @@
 		4F7FDD651A17DC0500345121 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		4F7FDD661A17DC0500345121 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		4F7FDD681A17DD8E00345121 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		4F7FDD6A1A17DEC200345121 /* LocationListViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationListViewModel.h; sourceTree = "<group>"; };
+		4F7FDD6B1A17DEC200345121 /* LocationListViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationListViewModel.m; sourceTree = "<group>"; };
+		4F7FDD6D1A17DFF600345121 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		4F7FDD6F1A17DFFD00345121 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4F7FDD711A17E07800345121 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +70,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F7FDD701A17DFFD00345121 /* Foundation.framework in Frameworks */,
+				4F7FDD6E1A17DFF600345121 /* UIKit.framework in Frameworks */,
 				4F7FDD691A17DD8F00345121 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -79,6 +89,8 @@
 		4F7FDD221A17D4CD00345121 = {
 			isa = PBXGroup;
 			children = (
+				4F7FDD6F1A17DFFD00345121 /* Foundation.framework */,
+				4F7FDD6D1A17DFF600345121 /* UIKit.framework */,
 				4F7FDD681A17DD8E00345121 /* MapKit.framework */,
 				4F7FDD2D1A17D4CD00345121 /* knozenmap */,
 				4F7FDD4A1A17D4CD00345121 /* knozenmapTests */,
@@ -114,6 +126,8 @@
 				4F7FDD621A17D77E00345121 /* ListTableViewController.m */,
 				4F7FDD651A17DC0500345121 /* MapViewController.h */,
 				4F7FDD661A17DC0500345121 /* MapViewController.m */,
+				4F7FDD6A1A17DEC200345121 /* LocationListViewModel.h */,
+				4F7FDD6B1A17DEC200345121 /* LocationListViewModel.m */,
 			);
 			path = knozenmap;
 			sourceTree = "<group>";
@@ -123,6 +137,7 @@
 			children = (
 				4F7FDD2F1A17D4CD00345121 /* Info.plist */,
 				4F7FDD301A17D4CD00345121 /* main.m */,
+				4F7FDD711A17E07800345121 /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -249,6 +264,7 @@
 				4F7FDD3A1A17D4CD00345121 /* SecondViewController.m in Sources */,
 				4F7FDD341A17D4CD00345121 /* AppDelegate.m in Sources */,
 				4F7FDD371A17D4CD00345121 /* FirstViewController.m in Sources */,
+				4F7FDD6C1A17DEC200345121 /* LocationListViewModel.m in Sources */,
 				4F7FDD671A17DC0500345121 /* MapViewController.m in Sources */,
 				4F7FDD311A17D4CD00345121 /* main.m in Sources */,
 				4F7FDD631A17D77E00345121 /* ListTableViewController.m in Sources */,
@@ -373,6 +389,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = knozenmap/PrefixHeader.pch;
 				INFOPLIST_FILE = knozenmap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -383,6 +400,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = knozenmap/PrefixHeader.pch;
 				INFOPLIST_FILE = knozenmap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

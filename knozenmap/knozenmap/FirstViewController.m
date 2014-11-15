@@ -10,7 +10,7 @@
 
 #import "ListTableViewController.h"
 #import "MapViewController.h"
-
+#import "LocationListViewModel.h"
 
 typedef enum {
     kSegmentList,
@@ -23,13 +23,16 @@ typedef enum {
 @property (nonatomic) Segment currentSegment;
 @property (nonatomic, strong) ListTableViewController *listVC;
 @property (nonatomic, strong) MapViewController *mapVC;
+@property (nonatomic, strong) LocationListViewModel *locationListVM;
 @end
 
 @implementation FirstViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    self.locationListVM = [[LocationListViewModel alloc] init];
+    [self.locationListVM getLocationData];
+
     [self loadSystemPreferenceSegment];
     [self loadListVC];
     [self loadMapVC];
@@ -40,13 +43,13 @@ typedef enum {
 - (void)loadListVC {
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"ListView" bundle:[NSBundle mainBundle]];
     self.listVC = [sb instantiateInitialViewController];
-    [self.listVC loadView];
+    [self.listVC view];
 }
 
 - (void)loadMapVC {
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"MapView" bundle:[NSBundle mainBundle]];
     self.mapVC = [sb instantiateInitialViewController];
-    [self.mapVC loadView];
+    [self.mapVC view];
 }
 
 - (void)loadSystemPreferenceSegment {
@@ -83,6 +86,8 @@ typedef enum {
 - (IBAction)didToggleSegment:(id)sender {
     self.currentSegment = (Segment)self.segmentControl.selectedSegmentIndex;
     [self updateSystemPreferenceSegment];
+    [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInteger:self.segmentControl.selectedSegmentIndex] forKey:kUDSegmentKey];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 - (void)loadCurrentSegmentControl {
