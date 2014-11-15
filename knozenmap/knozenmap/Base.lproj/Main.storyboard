@@ -25,16 +25,19 @@
                                     <segment title="List View"/>
                                     <segment title="Map View"/>
                                 </segments>
+                                <connections>
+                                    <action selector="didToggleSegment:" destination="9pv-A4-QxB" eventType="valueChanged" id="j5v-qH-7yR"/>
+                                </connections>
                             </segmentedControl>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EQA-UJ-RNL">
-                                <rect key="frame" x="0.0" y="48" width="600" height="503"/>
+                                <rect key="frame" x="0.0" y="49" width="600" height="502"/>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="EQA-UJ-RNL" secondAttribute="bottom" id="0oI-7P-mUQ"/>
                             <constraint firstAttribute="trailing" secondItem="EQA-UJ-RNL" secondAttribute="trailing" id="2F1-9L-CW9"/>
-                            <constraint firstItem="EQA-UJ-RNL" firstAttribute="top" secondItem="yNV-Mu-cwF" secondAttribute="bottom" id="BTb-Ld-lPk"/>
+                            <constraint firstItem="EQA-UJ-RNL" firstAttribute="top" secondItem="yNV-Mu-cwF" secondAttribute="bottom" constant="1" id="BTb-Ld-lPk"/>
                             <constraint firstAttribute="trailing" secondItem="yNV-Mu-cwF" secondAttribute="trailing" id="TDL-La-vf1"/>
                             <constraint firstItem="yNV-Mu-cwF" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="URg-Dz-Xz3"/>
                             <constraint firstItem="yNV-Mu-cwF" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="YaA-co-05E"/>
@@ -42,6 +45,10 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="container" destination="EQA-UJ-RNL" id="Kno-UZ-p9i"/>
+                        <outlet property="segmentControl" destination="yNV-Mu-cwF" id="acw-aD-uKY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>

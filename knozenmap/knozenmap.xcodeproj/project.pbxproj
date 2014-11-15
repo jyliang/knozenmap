@@ -17,8 +17,9 @@
 		4F7FDD4E1A17D4CD00345121 /* knozenmapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F7FDD4D1A17D4CD00345121 /* knozenmapTests.m */; };
 		4F7FDD581A17D6A500345121 /* ListView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F7FDD571A17D6A500345121 /* ListView.storyboard */; };
 		4F7FDD5A1A17D6AD00345121 /* MapView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F7FDD591A17D6AD00345121 /* MapView.storyboard */; };
-		4F7FDD601A17D74800345121 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F7FDD5F1A17D74800345121 /* MapViewController.m */; };
 		4F7FDD631A17D77E00345121 /* ListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F7FDD621A17D77E00345121 /* ListTableViewController.m */; };
+		4F7FDD671A17DC0500345121 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F7FDD661A17DC0500345121 /* MapViewController.m */; };
+		4F7FDD691A17DD8F00345121 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F7FDD681A17DD8E00345121 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,10 +50,11 @@
 		4F7FDD4D1A17D4CD00345121 /* knozenmapTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = knozenmapTests.m; sourceTree = "<group>"; };
 		4F7FDD571A17D6A500345121 /* ListView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ListView.storyboard; sourceTree = "<group>"; };
 		4F7FDD591A17D6AD00345121 /* MapView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MapView.storyboard; sourceTree = "<group>"; };
-		4F7FDD5E1A17D74800345121 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
-		4F7FDD5F1A17D74800345121 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		4F7FDD611A17D77E00345121 /* ListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListTableViewController.h; sourceTree = "<group>"; };
 		4F7FDD621A17D77E00345121 /* ListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListTableViewController.m; sourceTree = "<group>"; };
+		4F7FDD651A17DC0500345121 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		4F7FDD661A17DC0500345121 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		4F7FDD681A17DD8E00345121 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F7FDD691A17DD8F00345121 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +79,7 @@
 		4F7FDD221A17D4CD00345121 = {
 			isa = PBXGroup;
 			children = (
+				4F7FDD681A17DD8E00345121 /* MapKit.framework */,
 				4F7FDD2D1A17D4CD00345121 /* knozenmap */,
 				4F7FDD4A1A17D4CD00345121 /* knozenmapTests */,
 				4F7FDD2C1A17D4CD00345121 /* Products */,
@@ -106,10 +110,10 @@
 				4F7FDD2E1A17D4CD00345121 /* Supporting Files */,
 				4F7FDD571A17D6A500345121 /* ListView.storyboard */,
 				4F7FDD591A17D6AD00345121 /* MapView.storyboard */,
-				4F7FDD5E1A17D74800345121 /* MapViewController.h */,
-				4F7FDD5F1A17D74800345121 /* MapViewController.m */,
 				4F7FDD611A17D77E00345121 /* ListTableViewController.h */,
 				4F7FDD621A17D77E00345121 /* ListTableViewController.m */,
+				4F7FDD651A17DC0500345121 /* MapViewController.h */,
+				4F7FDD661A17DC0500345121 /* MapViewController.m */,
 			);
 			path = knozenmap;
 			sourceTree = "<group>";
@@ -244,8 +248,8 @@
 			files = (
 				4F7FDD3A1A17D4CD00345121 /* SecondViewController.m in Sources */,
 				4F7FDD341A17D4CD00345121 /* AppDelegate.m in Sources */,
-				4F7FDD601A17D74800345121 /* MapViewController.m in Sources */,
 				4F7FDD371A17D4CD00345121 /* FirstViewController.m in Sources */,
+				4F7FDD671A17DC0500345121 /* MapViewController.m in Sources */,
 				4F7FDD311A17D4CD00345121 /* main.m in Sources */,
 				4F7FDD631A17D77E00345121 /* ListTableViewController.m in Sources */,
 			);
