@@ -17,7 +17,9 @@
 
 @interface LocationListViewModel : NSObject
 
-@property (nonatomic, weak) id<LocationListViewModelDelegate> delegate;
+@property (nonatomic, weak) id<LocationListViewModelDelegate> listDelegate;
+@property (nonatomic, weak) id<LocationListViewModelDelegate> mapDelegate;
+
 @property (nonatomic, strong) NSMutableArray *locationViewModelList;
 
 - (void)getLocationData;

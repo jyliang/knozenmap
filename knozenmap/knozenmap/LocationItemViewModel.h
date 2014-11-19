@@ -15,4 +15,6 @@
 @property (nonatomic, strong) NSString *lon;
 @property (nonatomic) NSTimeInterval timestamp;
 
+- (CLLocationCoordinate2D)getCoordinate;
+
 @end

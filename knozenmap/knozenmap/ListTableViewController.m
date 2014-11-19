@@ -38,7 +38,7 @@
 
 - (void)setLocationListVM:(LocationListViewModel *)locationListVM {
     _locationListVM = locationListVM;
-    _locationListVM.delegate = self;
+    _locationListVM.listDelegate = self;
 }
 
 - (void)getLatestLocations {

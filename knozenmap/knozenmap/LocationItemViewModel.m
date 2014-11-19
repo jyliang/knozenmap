@@ -10,4 +10,11 @@
 
 @implementation LocationItemViewModel
 
+- (CLLocationCoordinate2D)getCoordinate {
+    CLLocationCoordinate2D pinCoordinate;
+    pinCoordinate.latitude = [self.lat doubleValue];
+    pinCoordinate.longitude = [self.lon doubleValue];
+    return pinCoordinate;
+}
+
 @end

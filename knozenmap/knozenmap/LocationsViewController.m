@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Jason Liang. All rights reserved.
 //
 
-#import "FirstViewController.h"
+#import "LocationsViewController.h"
 
 #import "ListTableViewController.h"
 #import "MapViewController.h"
@@ -19,14 +19,14 @@ typedef enum {
 
 #define kUDSegmentKey @"segmentKey"
 
-@interface FirstViewController () <LocationListViewControllerDelegate>
+@interface LocationsViewController () <LocationListViewControllerDelegate>
 @property (nonatomic) Segment currentSegment;
 @property (nonatomic, strong) ListTableViewController *listVC;
 @property (nonatomic, strong) MapViewController *mapVC;
 @property (nonatomic, strong) LocationListViewModel *locationListVM;
 @end
 
-@implementation FirstViewController
+@implementation LocationsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -49,6 +49,7 @@ typedef enum {
 - (void)loadMapVC {
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"MapView" bundle:[NSBundle mainBundle]];
     self.mapVC = [sb instantiateInitialViewController];
+    self.mapVC.locationListVM = self.locationListVM;
     [self.mapVC view];
 }
 

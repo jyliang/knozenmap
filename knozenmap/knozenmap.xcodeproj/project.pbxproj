@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		4F7FDD311A17D4CD00345121 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F7FDD301A17D4CD00345121 /* main.m */; };
 		4F7FDD341A17D4CD00345121 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F7FDD331A17D4CD00345121 /* AppDelegate.m */; };
-		4F7FDD371A17D4CD00345121 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F7FDD361A17D4CD00345121 /* FirstViewController.m */; };
-		4F7FDD3A1A17D4CD00345121 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F7FDD391A17D4CD00345121 /* SecondViewController.m */; };
+		4F7FDD371A17D4CD00345121 /* LocationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F7FDD361A17D4CD00345121 /* LocationsViewController.m */; };
+		4F7FDD3A1A17D4CD00345121 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F7FDD391A17D4CD00345121 /* AboutViewController.m */; };
 		4F7FDD3D1A17D4CD00345121 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F7FDD3B1A17D4CD00345121 /* Main.storyboard */; };
 		4F7FDD3F1A17D4CD00345121 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F7FDD3E1A17D4CD00345121 /* Images.xcassets */; };
 		4F7FDD421A17D4CD00345121 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F7FDD401A17D4CD00345121 /* LaunchScreen.xib */; };
@@ -43,10 +43,10 @@
 		4F7FDD301A17D4CD00345121 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4F7FDD321A17D4CD00345121 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4F7FDD331A17D4CD00345121 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		4F7FDD351A17D4CD00345121 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		4F7FDD361A17D4CD00345121 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		4F7FDD381A17D4CD00345121 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		4F7FDD391A17D4CD00345121 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		4F7FDD351A17D4CD00345121 /* LocationsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationsViewController.h; sourceTree = "<group>"; };
+		4F7FDD361A17D4CD00345121 /* LocationsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationsViewController.m; sourceTree = "<group>"; };
+		4F7FDD381A17D4CD00345121 /* AboutViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		4F7FDD391A17D4CD00345121 /* AboutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		4F7FDD3C1A17D4CD00345121 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4F7FDD3E1A17D4CD00345121 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4F7FDD411A17D4CD00345121 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -122,10 +122,10 @@
 			children = (
 				4F7FDD321A17D4CD00345121 /* AppDelegate.h */,
 				4F7FDD331A17D4CD00345121 /* AppDelegate.m */,
-				4F7FDD351A17D4CD00345121 /* FirstViewController.h */,
-				4F7FDD361A17D4CD00345121 /* FirstViewController.m */,
-				4F7FDD381A17D4CD00345121 /* SecondViewController.h */,
-				4F7FDD391A17D4CD00345121 /* SecondViewController.m */,
+				4F7FDD351A17D4CD00345121 /* LocationsViewController.h */,
+				4F7FDD361A17D4CD00345121 /* LocationsViewController.m */,
+				4F7FDD381A17D4CD00345121 /* AboutViewController.h */,
+				4F7FDD391A17D4CD00345121 /* AboutViewController.m */,
 				4F7FDD3B1A17D4CD00345121 /* Main.storyboard */,
 				4F7FDD761A17FCB900345121 /* List */,
 				4F7FDD751A17FCB400345121 /* Map */,
@@ -349,9 +349,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F7FDD3A1A17D4CD00345121 /* SecondViewController.m in Sources */,
+				4F7FDD3A1A17D4CD00345121 /* AboutViewController.m in Sources */,
 				4F7FDD341A17D4CD00345121 /* AppDelegate.m in Sources */,
-				4F7FDD371A17D4CD00345121 /* FirstViewController.m in Sources */,
+				4F7FDD371A17D4CD00345121 /* LocationsViewController.m in Sources */,
 				4F7FDD6C1A17DEC200345121 /* LocationListViewModel.m in Sources */,
 				4F7FDD671A17DC0500345121 /* MapViewController.m in Sources */,
 				4F7FDD311A17D4CD00345121 /* main.m in Sources */,

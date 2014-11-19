@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "LocationItemViewModel.h"
+#import "LocationListViewModel.h"
 
 @interface MapViewController : UIViewController
+
+@property (nonatomic, weak) LocationListViewModel *locationListVM;
 
 - (void)navigateTo:(LocationItemViewModel *)itemVM;
 

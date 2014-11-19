@@ -44,10 +44,12 @@
         [XMLParser setShouldProcessNamespaces:YES];
         XMLParser.delegate = self;
         [XMLParser parse];
-        [self.delegate stopLoadingState];
+        [self.listDelegate stopLoadingState];
+        [self.mapDelegate stopLoadingState];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         [self handleError:error];
-        [self.delegate stopLoadingState];
+        [self.listDelegate stopLoadingState];
+        [self.mapDelegate stopLoadingState];
     }];
 
     [self.queue addOperation:operation];
@@ -109,7 +111,8 @@
 
 - (void) parserDidEndDocument:(NSXMLParser *)parser
 {
-    [self.delegate reloadLocationData];
+    [self.listDelegate reloadLocationData];
+    [self.mapDelegate reloadLocationData];
 }
 
 @end

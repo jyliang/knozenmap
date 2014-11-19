@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 Jason Liang. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "AboutViewController.h"
 
-@interface SecondViewController ()
+@interface AboutViewController ()
 
 @end
 
-@implementation SecondViewController
+@implementation AboutViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
